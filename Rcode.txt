@@ -1,0 +1,39 @@
+
+R-CODE FOR 2*2 MATRIX
+
+lvs <- c("rating45", "rating123")
+truth <- factor(rep(lvs, times = c(30000,45000)),
+                levels = rev(lvs))
+pred <- factor(
+  c(
+    rep(lvs, times = c(3100,26900)),
+  rep(lvs, times = c(40000,5000))),
+  
+  levels = rev(lvs))
+
+xtab <- table(pred, truth)
+# load Caret package for computing Confusion matrix
+library(caret) 
+confusionMatrix(xtab)
+
+-----------------------------------------------------------------
+
+R-CODE FOR 5*5 MATRIX
+
+lvs <- c("rating1","rating2","rating3","rating4","rating5")
+pred <- factor(rep(lvs, times = c(15000,15000,15000,15000,15000)),
+                levels = rev(lvs))
+truth <- factor(
+  c(
+    rep(lvs, times = c(590,968,1643,10174,1626)),
+  rep(lvs, times = c(1728,1533,3917,5244,2578)),
+  rep(lvs, times = c(4204,2328,4600,2666,1202)),
+  rep(lvs, times = c(6222,5168,1870,1273,467)),
+  rep(lvs, times = c(2740,10312,588,1137,223)))
+  
+  levels = rev(lvs))
+
+xtab <- table(pred, truth)
+# load Caret package for computing Confusion matrix
+library(caret) 
+confusionMatrix(xtab)
